@@ -1,4 +1,4 @@
-package com.example.leaderboard;
+package au.edu.unsw.infs3634.signup;
 
 import android.content.ClipData;
 import android.content.Context;

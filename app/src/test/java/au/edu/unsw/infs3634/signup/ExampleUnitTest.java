@@ -1,4 +1,4 @@
-package com.example.leaderboard;
+package au.edu.unsw.infs3634.signup;
 
 import org.junit.Test;
 

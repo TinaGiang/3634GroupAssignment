@@ -1,4 +1,4 @@
-package com.example.leaderboard;
+package au.edu.unsw.infs3634.signup;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.example.leaderboard", appContext.getPackageName());
+        assertEquals("au.edu.unsw.infs3634.signup", appContext.getPackageName());
     }
 }

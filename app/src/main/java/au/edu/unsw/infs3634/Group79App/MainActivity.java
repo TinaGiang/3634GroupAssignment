@@ -1,7 +1,6 @@
-package au.edu.unsw.infs3634.signup;
+package au.edu.unsw.infs3634.Group79App;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -12,9 +11,35 @@ import android.widget.EditText;
 
 import java.util.List;
 
-import au.edu.unsw.infs3634.signup.Room.SignupDao;
-import au.edu.unsw.infs3634.signup.Room.SignupDatabase;
-import au.edu.unsw.infs3634.signup.Room.SignupTable;
+import au.edu.unsw.infs3634.Group79App.Room.SignupTable;
+
+
+/***************************************************************************************
+                                 REFERENCES
+
+ *    Title: Making a Notes App Using Room Database
+ *    Author: PAVEENT SINGH
+ *    Date: ACCESSED 04-04-2020
+ *    Code version: Jan 10, 2019
+ *    Availability: https://www.pluralsight.com/guides/making-a-notes-app-using-room-database
+ *
+ *   Title: Android Room Database Example – Building a Todo App
+ *   Author: Belal Khan
+ *   Date: ACCESSED 04-04-2020
+ *   Code version: July 27, 2018
+ *   Availability: https://www.simplifiedcoding.net/android-room-database-example/#Database-Client
+ *
+ *   Title: Simple RecyclerView (Java)
+ *   Author: codinginflow
+ *   Date: ACCESSED 04-04-2020
+ *   Code version: Oct 19, 2017
+ *   Availability: https://codinginflow.com/tutorials/android/simple-recyclerview-java/part-1-layouts-model-class
+ *
+ *
+ ***************************************************************************************/
+
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         //SignupTable data = new SignupTable();
 
         if (memail.toString().isEmpty()) {
-            memail.setError("Email required");
+            memail.setError("Type in 'email'");
             memail.requestFocus();
             //      return;
         }

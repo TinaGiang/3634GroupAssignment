@@ -1,4 +1,4 @@
-package au.edu.unsw.infs3634.signup.Room;
+package au.edu.unsw.infs3634.Group79App.Room;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

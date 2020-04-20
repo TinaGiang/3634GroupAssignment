@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="au.edu.unsw.infs3634.signup">
+    package="au.edu.unsw.infs3634.Group79App">
 
     <application
         android:allowBackup="true"
@@ -9,16 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="au.edu.unsw.infs3634.Group79App.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".Leaderboard" />
+        <activity android:name="au.edu.unsw.infs3634.Group79App.SignupActivity" />
+        <activity android:name="au.edu.unsw.infs3634.Group79App.LoginActivity" />
+        <activity android:name="au.edu.unsw.infs3634.Group79App.Leaderboard" />
     </application>
 
 </manifest>

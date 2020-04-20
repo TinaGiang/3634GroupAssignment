@@ -1,7 +1,5 @@
-package au.edu.unsw.infs3634.signup;
+package au.edu.unsw.infs3634.Group79App;
 
-import android.content.ClipData;
-import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +13,6 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.mViewHolder> {
     private ArrayList<items> mmList;

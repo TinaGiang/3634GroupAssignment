@@ -1,10 +1,10 @@
-package au.edu.unsw.infs3634.signup;
+package au.edu.unsw.infs3634.Group79App;
 
 import android.content.Context;
 
 import androidx.room.Room;
 
-import au.edu.unsw.infs3634.signup.Room.SignupDatabase;
+import au.edu.unsw.infs3634.Group79App.Room.SignupDatabase;
 
 public class DatabaseClient {
 

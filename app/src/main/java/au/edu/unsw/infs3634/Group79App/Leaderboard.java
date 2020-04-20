@@ -1,20 +1,16 @@
-package au.edu.unsw.infs3634.signup;
+package au.edu.unsw.infs3634.Group79App;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import au.edu.unsw.infs3634.signup.R;
+import au.edu.unsw.infs3634.Group79App.R;
 
 public class Leaderboard extends AppCompatActivity {
     private RecyclerView mRecyclerView;

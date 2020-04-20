@@ -1,7 +1,6 @@
-package au.edu.unsw.infs3634.signup.Room;
+package au.edu.unsw.infs3634.Group79App.Room;
 
 import androidx.room.Dao;
-import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 

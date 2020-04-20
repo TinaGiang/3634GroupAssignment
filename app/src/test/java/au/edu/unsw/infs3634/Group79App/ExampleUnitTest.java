@@ -1,4 +1,4 @@
-package au.edu.unsw.infs3634.signup;
+package au.edu.unsw.infs3634.Group79App;
 
 import org.junit.Test;
 

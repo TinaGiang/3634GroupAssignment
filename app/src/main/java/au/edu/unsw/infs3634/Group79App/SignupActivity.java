@@ -1,4 +1,4 @@
-package au.edu.unsw.infs3634.signup;
+package au.edu.unsw.infs3634.Group79App;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import au.edu.unsw.infs3634.signup.Room.SignupTable;
+import au.edu.unsw.infs3634.Group79App.Room.SignupTable;
 
 public class SignupActivity extends AppCompatActivity {
 

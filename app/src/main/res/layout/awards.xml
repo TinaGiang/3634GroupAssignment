@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Awards" >
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="6dp"
+        android:indeterminate="false"
+        android:max="10000"
+        android:minWidth="200dp"
+         android:minHeight="50dp"
+        android:progress="1" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/progressBar"
+        android:layout_below="@+id/progressBar"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/MyAwards"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        app:srcCompat="@drawable/gobletofif" />
+
+    <TextView
+        android:id="@+id/MyAwards"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="@string/my_awards"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/Rocket"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/progressBar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="12dp"
+        app:srcCompat="@drawable/greyrocket" />
+
+    <ImageView
+        android:id="@+id/Bronze"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Rocket"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="12dp"
+        app:srcCompat="@drawable/greyaward" />
+
+    <ImageView
+        android:id="@+id/Silver"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Bronze"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="12dp"
+        app:srcCompat="@drawable/greyaward" />
+
+    <ImageView
+        android:id="@+id/Gold"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Silver"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="12dp"
+        app:srcCompat="@drawable/greyaward" />
+
+    <ImageView
+        android:id="@+id/Platinium"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Gold"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="12dp"
+        app:srcCompat="@drawable/question" />
+
+    <TextView
+        android:id="@+id/RocketTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressBar"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_toEndOf="@+id/Rocket"
+        android:layout_toRightOf="@+id/Rocket"
+        android:text="We Have Lift off!!"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/BronzeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RocketTitle"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="34dp"
+        android:layout_toEndOf="@+id/Rocket"
+        android:layout_toRightOf="@+id/Rocket"
+        android:text="Your First Medal!"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/SilverTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BronzeTitle"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="36dp"
+        android:layout_toEndOf="@+id/Rocket"
+        android:layout_toRightOf="@+id/Rocket"
+        android:text="Oooh Shiny!"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/PlatTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/GoldTitle"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="34dp"
+        android:layout_toEndOf="@+id/Rocket"
+        android:layout_toRightOf="@+id/Rocket"
+        android:text="You are a Star!"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/GoldTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SilverTitle"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="36dp"
+        android:layout_toEndOf="@+id/Rocket"
+        android:layout_toRightOf="@+id/Rocket"
+        android:text="Struck Gold!"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/RocketDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RocketTitle"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@+id/Rocket"
+        android:layout_toRightOf="@+id/Rocket"
+        android:text="Score greater than 0"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/BronzeDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/BronzeTitle"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@+id/Bronze"
+        android:layout_toRightOf="@+id/Bronze"
+        android:text="Score greater than 1"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/SilverDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SilverTitle"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@+id/Silver"
+        android:layout_toRightOf="@+id/Silver"
+        android:text="Score greater than 2500"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/GoldDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/GoldTitle"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@+id/Gold"
+        android:layout_toRightOf="@+id/Gold"
+        android:text="Score greater than 5000"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/PlatDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PlatTitle"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="6dp"
+        android:layout_toEndOf="@+id/Platinium"
+        android:layout_toRightOf="@+id/Platinium"
+        android:text="Score greater than 8000"
+        android:textStyle="italic" />
+
+</RelativeLayout>

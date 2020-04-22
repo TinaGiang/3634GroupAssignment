@@ -1,8 +1,10 @@
 package au.edu.unsw.infs3634.Group79App;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         memail = findViewById(R.id.memail);
         mpassword = findViewById(R.id.mpassword);
+
         registerButton = findViewById(R.id.registerButton);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        //SignupTable data = new SignupTable();
 
         if (memail.toString().isEmpty()) {
             memail.setError("Type in 'email'");
@@ -78,9 +79,6 @@ public class MainActivity extends AppCompatActivity {
             //     return;
         }
 
-        //trying to see if it can reach the loop
-
-
         loginButton = findViewById(R.id.loginButton);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,15 +88,14 @@ public class MainActivity extends AppCompatActivity {
                 String password = mpassword.getText().toString();
 
 
-
-
                if(email.equals("email")) {
-                {
 
+                    memail.setText("");
+                    mpassword.setText("");
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
                     getDetails();
-                }
+
             }
             }
         });
@@ -106,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
         getDetails();
 
     }
-
 
     private void getDetails() {
         class GetDetails extends AsyncTask<Void, Void, List<SignupTable>> {

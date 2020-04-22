@@ -5,12 +5,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 import com.google.android.material.navigation.NavigationView;
@@ -23,6 +27,7 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
 
     private DrawerLayout drawerLayout;
     private NavigationView navView;
+    private Button signOutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +57,15 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
            // nv.setCheckedItem(R.id.nav);
         }
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
 
+        signOutButton = findViewById(R.id.signOutButton);
+        signOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LoginActivity.super.onBackPressed();
+            }
+        });
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -95,10 +107,9 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            drawerLayout.openDrawer(GravityCompat.START);
         }
 
     }
-
 
 }

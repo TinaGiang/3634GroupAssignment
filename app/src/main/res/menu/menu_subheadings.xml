@@ -5,10 +5,10 @@
     >
 
     <group android:checkableBehavior="single">
-        <item
+        <!--<item
         android:id="@+id/profileInfo"
         android:icon="@drawable/profile"
-        android:title="Profile Information" />
+        android:title="Profile Information" />-->
          <item
         android:id="@+id/takeQuiz"
         android:icon="@drawable/quiz"

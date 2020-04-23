@@ -34,6 +34,7 @@ public class SignupActivity extends AppCompatActivity {
         sconfirmPassword = findViewById(R.id.sconfirmPassword);
         signupButton = findViewById(R.id.signupButton);
 
+        //Method collects user's details and displays an alert if successful or unsuccessful
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,7 +80,6 @@ public class SignupActivity extends AppCompatActivity {
                         sconfirmPassword.requestFocus();
                         return;
                     }
-
                 } else {
                     saveSignupTable();
                     openEmailDialog();
@@ -98,8 +98,8 @@ public class SignupActivity extends AppCompatActivity {
         signupEmailDialog.show(getSupportFragmentManager(), "Signup Email Dialog");
     }
 
+    //Method adds the user's details to the database from the sign up screen
     private void saveSignupTable() {
-
 
         class SaveSignupTable extends AsyncTask<Void, Void, Void> {
 
@@ -125,7 +125,7 @@ public class SignupActivity extends AppCompatActivity {
                 super.onPostExecute(aVoid);
                 finish();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Details Saved", Toast.LENGTH_LONG).show();
             }
         }
 

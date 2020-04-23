@@ -9,14 +9,11 @@ import java.util.List;
 @Dao
 public interface SignupDao {
 
-
-
     @Insert
     void insertDetails(SignupTable data);
 
     @Query("SELECT * FROM SignupTable")
     List<SignupTable> getDetails();
-
 
     /*@Delete
     void deleteAllData();*/

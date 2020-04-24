@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      >
+    >
 
     <group android:checkableBehavior="single">
-        <item
+        <!--<item
         android:id="@+id/profileInfo"
         android:icon="@drawable/profile"
-        android:title="Profile Information" />
+        android:title="Profile Information" />-->
          <item
         android:id="@+id/takeQuiz"
         android:icon="@drawable/quiz"
@@ -27,6 +29,5 @@
     </group>
 
 
-
-
 </menu>
+

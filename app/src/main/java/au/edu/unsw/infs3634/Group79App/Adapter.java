@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.mViewHolder> {
-    private ArrayList<items> mmList;
+    private ArrayList<Items> mmList;
 
 
     public static class mViewHolder extends RecyclerView.ViewHolder {
@@ -46,7 +46,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.mViewHolder> {
         }
     }
 
-    public Adapter(ArrayList<items> mList) {
+    public Adapter(ArrayList<Items> mList) {
         mmList = mList;
     }
 
@@ -61,7 +61,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.mViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull mViewHolder holder, int position) {
-        items cItem = mmList.get(position);
+        Items cItem = mmList.get(position);
 
         holder.mImageView.setImageResource(cItem.getmImage());
         holder.mTextView1.setText(cItem.getName());

@@ -17,7 +17,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class LeaderboardFragment extends Fragment {
-   private ArrayList<items> mList;
+   private ArrayList<Items> mList;
 
     @Nullable
     @Override
@@ -27,9 +27,9 @@ View rootview =  inflater.inflate(R.layout.leaderboard, container, false);
        RecyclerView mRecyclerView =(RecyclerView) rootview.findViewById(R.id.rView);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
         new LeaderboardFragment();
         getList();
-        System.out.println(getList().get(0).getScoresInt());
 
         Adapter mAdapter = new Adapter(mList);
 
@@ -43,17 +43,17 @@ return  rootview;
 
     public LeaderboardFragment() {
         mList = new ArrayList<>();
-        mList.add(new items(R.drawable.silver, "You", "3041", " "));
-        mList.add(new items(R.drawable.bronze, "Kermit", "1041", ""));
-        mList.add(new items(R.drawable.bronze, "Naruto", "1087", ""));
-        mList.add(new items(R.drawable.silver, "Abc", "2721", ""));
-        mList.add(new items(R.drawable.silver, "Ya boi", "3021", ""));
-        mList.add(new items(R.drawable.silver, "Nani", "3034", ""));
-        mList.add(new items(R.drawable.silver, "Boris", "4121", ""));
-        mList.add(new items(R.drawable.gold, "Goku", "5471", ""));
+        mList.add(new Items(R.drawable.silver, "You", "3041", " ", 1));
+        mList.add(new Items(R.drawable.bronze, "Kermit", "1041", "",10));
+        mList.add(new Items(R.drawable.bronze, "Naruto", "1087", "",9));
+        mList.add(new Items(R.drawable.silver, "Abc", "2721", "",8));
+        mList.add(new Items(R.drawable.silver, "Ya boi", "3021", "",7));
+        mList.add(new Items(R.drawable.silver, "Nani", "3034", "",6));
+        mList.add(new Items(R.drawable.silver, "Boris", "4121", "",5));
+        mList.add(new Items(R.drawable.gold, "Goku", "5471", "",4));
 
-        mList.add(new items(R.drawable.gold, "Lelouch", "6021", ""));
-        mList.add(new items(R.drawable.plat, "My Cat", "8021", ""));
+        mList.add(new Items(R.drawable.gold, "Lelouch", "6021", "",3));
+        mList.add(new Items(R.drawable.plat, "My Cat", "8021", "",2));
 
         for (int i = 0; i < mList.size(); i++) {
             int num = (mList.get(i).getScoresInt());
@@ -82,7 +82,7 @@ return  rootview;
 
         //set ranking from 1 to 10
         for (int i = 0; i < mList.size(); i++) {
-            items sg = mList.get(i);
+            Items sg = mList.get(i);
             ranki--;
 
 
@@ -143,10 +143,10 @@ return  rootview;
 
 
         // sort from highest score to lowest
-        Collections.sort(mList, new Comparator<items>() {
-                    public int compare(items obj1, items obj2) {
+        Collections.sort(mList, new Comparator<Items>() {
+                    public int compare(Items obj1, Items obj2) {
 
-                        return obj2.getScoresInt() - (obj1.getScoresInt());
+                        return obj1.getSort() - (obj2.getSort());
 
                     }
 
@@ -156,7 +156,7 @@ return  rootview;
     }
 
 
-    public ArrayList<items> getList() {
+    public ArrayList<Items> getList() {
         return mList;
     }
 }

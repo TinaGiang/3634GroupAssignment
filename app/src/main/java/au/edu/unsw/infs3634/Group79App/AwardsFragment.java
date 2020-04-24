@@ -21,7 +21,7 @@ public class AwardsFragment extends Fragment {
         View rootview =  inflater.inflate(R.layout.awards, container, false);
 
         LeaderboardFragment abc = new LeaderboardFragment();
-        System.out.println(abc.getList().get(0).getScoresInt());
+
 
         ProgressBar progressBar = (ProgressBar)rootview.findViewById(R.id.progressBar);
         ImageView rocketAward = (ImageView)rootview.findViewById(R.id.Rocket);
@@ -30,6 +30,8 @@ public class AwardsFragment extends Fragment {
         ImageView goldAward = (ImageView)rootview.findViewById(R.id.Gold);
         ImageView platiniumAward = (ImageView)rootview.findViewById(R.id.Platinium);
 
+        TextView Total = (TextView)rootview.findViewById(R.id.Total);
+        Total.setText(abc.getList().get(0).getScoresInt()+"/10000");
         TextView rocketAwardTitle = (TextView)rootview.findViewById(R.id.RocketTitle);
         TextView bronzeAwardTitle = (TextView)rootview.findViewById(R.id.BronzeTitle);
         TextView silverAwardTitle = (TextView)rootview.findViewById(R.id.SilverTitle);

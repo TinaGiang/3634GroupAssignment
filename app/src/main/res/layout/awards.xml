@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="25dp"
         android:text="@string/my_awards"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -120,7 +120,7 @@
         android:layout_marginTop="12dp"
         android:layout_toEndOf="@+id/Rocket"
         android:layout_toRightOf="@+id/Rocket"
-        android:text="We Have Lift off!!"
+        android:text="We Have Lift Off!!"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -244,5 +244,14 @@
         android:layout_toRightOf="@+id/Platinium"
         android:text="Score greater than 8000"
         android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/Total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-12dp"
+        android:text="TextView" />
 
 </RelativeLayout>

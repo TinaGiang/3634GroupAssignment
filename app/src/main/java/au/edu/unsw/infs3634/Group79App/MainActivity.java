@@ -1,8 +1,10 @@
 package au.edu.unsw.infs3634.Group79App;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -55,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
         memail = findViewById(R.id.memail);
         mpassword = findViewById(R.id.mpassword);
+
+        //SignupActivity is called when the user clicks on the sign up button
         registerButton = findViewById(R.id.registerButton);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,23 +68,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //SignupTable data = new SignupTable();
-
-        if (memail.toString().isEmpty()) {
-            memail.setError("Type in 'email'");
-            memail.requestFocus();
-            //      return;
-        }
-
-        if (mpassword.toString().isEmpty()) {
-            mpassword.setError("Password required");
-            mpassword.requestFocus();
-            //     return;
-        }
-
-        //trying to see if it can reach the loop
-
-
+        //When user clicks on login button, they receive an alert or are successful in logging in
         loginButton = findViewById(R.id.loginButton);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,17 +77,27 @@ public class MainActivity extends AppCompatActivity {
                 String email = memail.getText().toString();
                 String password = mpassword.getText().toString();
 
+                if (email.isEmpty()) {
+                    memail.setError("Type in 'email'");
+                    memail.requestFocus();
+                    return;
+                }
 
+                if (password.isEmpty()) {
+                    mpassword.setError("Password required");
+                    mpassword.requestFocus();
+                    return;
+                }
 
-
-               if(email.equals("email")) {
-                {
-
+               if(email.equals("email") && password.equals("password")) {
+                    memail.setText("");
+                    mpassword.setText("");
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
                     getDetails();
-                }
-            }
+                } else {
+                   openLoginDialog();
+               }
             }
         });
 
@@ -107,7 +105,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void openLoginDialog() {
+        LoginDialog loginDialog = new LoginDialog();
+        loginDialog.show(getSupportFragmentManager(), "Login Dialog");
+    }
 
+    //Method adds user's details to database once they are successful in signing up
     private void getDetails() {
         class GetDetails extends AsyncTask<Void, Void, List<SignupTable>> {
 
@@ -119,8 +122,7 @@ public class MainActivity extends AppCompatActivity {
                         .signupDao()
                         .getDetails();
 
-                          return tableList;
-
+                return tableList;
 
             }
 
@@ -135,7 +137,6 @@ public class MainActivity extends AppCompatActivity {
         GetDetails gd = new GetDetails();
         gd.execute();
     }
-
 
 }
 

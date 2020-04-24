@@ -11,13 +11,13 @@ public class DatabaseClient {
     private Context context;
     private static DatabaseClient instance;
 
-    //our app database object
+    //App database object
     private SignupDatabase signupDatabase;
 
     private DatabaseClient(Context context) {
         this.context = context;
 
-        //creating the app database with Room database builder
+        //Creating the app database with Room database builder
         signupDatabase = Room.databaseBuilder(context, SignupDatabase.class, "Signup Details").fallbackToDestructiveMigration().build();
     }
 

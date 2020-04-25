@@ -29,12 +29,12 @@ public class TakeQuizFragment extends Fragment {
     private String falseAnswer;
     private String trueAnswer;
 
-
+    int a = 0;
 
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootview =  inflater.inflate(R.layout.quiz, container, false);
+        View rootview = inflater.inflate(R.layout.quiz, container, false);
 
 
         TextView textViewResult = rootview.findViewById(R.id.Question);
@@ -42,7 +42,6 @@ public class TakeQuizFragment extends Fragment {
         TextView Score = rootview.findViewById(R.id.score);
 
         LeaderboardFragment abc = new LeaderboardFragment();
-
 
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -53,6 +52,7 @@ public class TakeQuizFragment extends Fragment {
 
         HolderApi jsonPlaceHolderApi = retrofit.create(HolderApi.class);
         Call<Quiz> call = jsonPlaceHolderApi.getPosts();
+
         call.enqueue(new Callback<Quiz>() {
             @Override
             public void onResponse(Call<Quiz> call, Response<Quiz> response) {
@@ -65,20 +65,23 @@ public class TakeQuizFragment extends Fragment {
 
                 }
 
+
                 Quiz posts = response.body();
 
 
                 textViewResult.setText(" ");
-                String content = "";
 
-                content += "Question: " + posts.getResults().get(0).getQuestion() + "\n";
-                content += "Correct Answers: " + posts.getResults().get(0).getCorrectAnswer() + "\n";
-                content += "Incorrect Answers1: " + posts.getResults().get(0).getIncorrectAnswers().get(0) + "\n";
-                textViewResult.append(content);
+                String question = "Question: " + posts.getResults().get(0).getQuestion() + "\n";
+
+
+
+                question = question.replace("&quot;", "").replace("039#;","") + "\n";
+                // content += "Correct Answers: " + posts.getResults().get(0).getCorrectAnswer() + "\n";
+                //  content += "Incorrect Answers1: " + posts.getResults().get(0).getIncorrectAnswers().get(0) + "\n";
+                textViewResult.append(question);
 
                 trueAnswer = posts.getResults().get(0).getCorrectAnswer();
                 falseAnswer = posts.getResults().get(0).getIncorrectAnswers().get(0);
-
 
 
             }
@@ -103,9 +106,13 @@ public class TakeQuizFragment extends Fragment {
                 if (trueAnswer.compareTo("False") == 0) {
                     Results.setText("Correct! 10pts");
 
-                    abc.getList().get(0).setScores(Integer.toString(10));
 
-                    Score.setText(abc.getList().get(0).getScores());
+                    a += 10;
+
+                    abc.getList().get(0).setScores(Integer.toString(a));
+
+                    Score.setText("Your Score is " + abc.getList().get(0).getScores());
+
 
                 } else {
                     Results.setText("Incorrect");
@@ -131,16 +138,17 @@ public class TakeQuizFragment extends Fragment {
 
 
                         textViewResult.setText(" ");
-                        String content = "";
+                        String question = "Question: " + posts.getResults().get(0).getQuestion() + "\n";
 
-                        content += "Question: " + posts.getResults().get(0).getQuestion() + "\n";
-                        content += "Correct Answers: " + posts.getResults().get(0).getCorrectAnswer() + "\n";
-                        content += "Incorrect Answers1: " + posts.getResults().get(0).getIncorrectAnswers().get(0) + "\n";
-                        textViewResult.append(content);
+
+
+                        question = question.replace("&quot;", "").replace("039#;","") + "\n";
+                        //         content += "Correct Answers: " + posts.getResults().get(0).getCorrectAnswer() + "\n";
+                        //     content += "Incorrect Answers1: " + posts.getResults().get(0).getIncorrectAnswers().get(0) + "\n";
+                        textViewResult.append(question);
 
                         trueAnswer = posts.getResults().get(0).getCorrectAnswer();
                         falseAnswer = posts.getResults().get(0).getIncorrectAnswers().get(0);
-
 
 
                     }
@@ -158,7 +166,6 @@ public class TakeQuizFragment extends Fragment {
         });
 
 
-
         trueButton = rootview.findViewById(R.id.True);
 
         trueButton.setOnClickListener(new View.OnClickListener() {
@@ -168,9 +175,14 @@ public class TakeQuizFragment extends Fragment {
 
                 if (trueAnswer.compareTo("True") == 0) {
                     Results.setText("Correct! 10pts");
-                   abc.getList().get(0).setScores(Integer.toString(10));
 
-                   Score.setText(abc.getList().get(0).getScores());
+
+                    a += 10;
+
+                    abc.getList().get(0).setScores(Integer.toString(a));
+
+                    Score.setText("Your Score is " +abc.getList().get(0).getScores());
+
 
                 } else {
                     Results.setText("Incorrect");
@@ -194,16 +206,17 @@ public class TakeQuizFragment extends Fragment {
 
 
                         textViewResult.setText(" ");
-                        String content = "";
+                        String question = "Question: " + posts.getResults().get(0).getQuestion() + "\n";
 
-                        content += "Question: " + posts.getResults().get(0).getQuestion() + "\n";
-                        content += "Correct Answers: " + posts.getResults().get(0).getCorrectAnswer() + "\n";
-                        content += "Incorrect Answers1: " + posts.getResults().get(0).getIncorrectAnswers().get(0) + "\n";
-                        textViewResult.append(content);
+
+
+                        question = question.replace("&quot;", "TEST").replace("&039#;","") + "\n";
+                        //      content += "Correct Answers: " + posts.getResults().get(0).getCorrectAnswer() + "\n";
+                        //       content += "Incorrect Answers1: " + posts.getResults().get(0).getIncorrectAnswers().get(0) + "\n";
+                        textViewResult.append(question);
 
                         trueAnswer = posts.getResults().get(0).getCorrectAnswer();
                         falseAnswer = posts.getResults().get(0).getIncorrectAnswers().get(0);
-
 
 
                     }

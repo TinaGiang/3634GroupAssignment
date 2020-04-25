@@ -55,7 +55,11 @@ class Items {
         return sort;
     }
 
+
     public void setScores(String scores) {
+
+
+
         this.scores = scores;
     }
 

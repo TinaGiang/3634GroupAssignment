@@ -43,17 +43,17 @@ return  rootview;
 
     public LeaderboardFragment() {
         mList = new ArrayList<>();
-        mList.add(new Items(R.drawable.silver, "You", "3041", " ", 1));
-        mList.add(new Items(R.drawable.bronze, "Kermit", "1041", "",10));
-        mList.add(new Items(R.drawable.bronze, "Naruto", "1087", "",9));
-        mList.add(new Items(R.drawable.silver, "Abc", "2721", "",8));
-        mList.add(new Items(R.drawable.silver, "Ya boi", "3021", "",7));
-        mList.add(new Items(R.drawable.silver, "Nani", "3034", "",6));
-        mList.add(new Items(R.drawable.silver, "Boris", "4121", "",5));
-        mList.add(new Items(R.drawable.gold, "Goku", "5471", "",4));
+        mList.add(new Items(R.drawable.silver, "You", "0", " ", 1));
+        mList.add(new Items(R.drawable.bronze, "Kermit", "1040", "",10));
+        mList.add(new Items(R.drawable.bronze, "Naruto", "1090", "",9));
+        mList.add(new Items(R.drawable.silver, "Abc", "2720", "",8));
+        mList.add(new Items(R.drawable.silver, "Ya boi", "3020", "",7));
+        mList.add(new Items(R.drawable.silver, "Nani", "3030", "",6));
+        mList.add(new Items(R.drawable.silver, "Boris", "4120", "",5));
+        mList.add(new Items(R.drawable.gold, "Goku", "5470", "",4));
 
-        mList.add(new Items(R.drawable.gold, "Lelouch", "6021", "",3));
-        mList.add(new Items(R.drawable.plat, "My Cat", "8021", "",2));
+        mList.add(new Items(R.drawable.gold, "Lelouch", "6020", "",3));
+        mList.add(new Items(R.drawable.plat, "My Cat", "8020", "",2));
 
         for (int i = 0; i < mList.size(); i++) {
             int num = (mList.get(i).getScoresInt());

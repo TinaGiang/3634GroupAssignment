@@ -99,8 +99,8 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
 
                 break;
             case R.id.takeQuiz:
-                //     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                //             new ()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            new TakeQuizFragment()).commit();
 
                 break;
 

@@ -6,6 +6,7 @@ class Items {
     private String name;
     private String scores;
     private int ScoreInt;
+
     private String rank;
     private int sort;
 
@@ -34,14 +35,19 @@ class Items {
     }
 
     public String getScores() {
+
+
+
         return scores;
     }
 
     public int getScoresInt() {
 
-        ScoreInt =  Integer.parseInt(scores);
+        int ScoreInt = Integer.parseInt(scores);
         return ScoreInt;
     }
+
+
 
     public int getSort() {
 
@@ -52,6 +58,8 @@ class Items {
     public void setScores(String scores) {
         this.scores = scores;
     }
+
+
 
     public String getRank() {
         return rank;

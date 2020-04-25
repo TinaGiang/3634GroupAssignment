@@ -30,14 +30,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="33dp"
-            android:layout_marginLeft="33dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="12dp"
             android:layout_toEndOf="@+id/textView3"
             android:layout_toRightOf="@+id/textView3"
             android:clickable="true"
             android:text="Names"
-            android:textColor="#0797BC"
             android:textSize="18sp"
             android:textStyle="bold" />
 

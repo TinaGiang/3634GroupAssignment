@@ -1,5 +1,6 @@
 package au.edu.unsw.infs3634.Group79App;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,22 +16,26 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
+
+import au.edu.unsw.infs3634.Group79App.Room.SignupTable;
 
 public class LeaderboardFragment extends Fragment {
-   private ArrayList<Items> mList;
+    private ArrayList<Items> mList;
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-View rootview =  inflater.inflate(R.layout.leaderboard, container, false);
+        View rootview =  inflater.inflate(R.layout.leaderboard, container, false);
 
-       RecyclerView mRecyclerView =(RecyclerView) rootview.findViewById(R.id.rView);
+        RecyclerView mRecyclerView =(RecyclerView) rootview.findViewById(R.id.rView);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         new LeaderboardFragment();
-        getList();
+
+        getSignupTable();
 
         Adapter mAdapter = new Adapter(mList);
 
@@ -39,7 +44,7 @@ View rootview =  inflater.inflate(R.layout.leaderboard, container, false);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
-return  rootview;
+        return  rootview;
     }
 
     public LeaderboardFragment() {
@@ -55,6 +60,8 @@ return  rootview;
         mList.add(new Items(R.drawable.gold, "Goku", "5470", "",4));
         mList.add(new Items(R.drawable.gold, "Lelouch", "6020", "",3));
         mList.add(new Items(R.drawable.plat, "My Cat", "8020", "",2));
+
+
 
 
         for (int i = 0; i < mList.size(); i++) {
@@ -160,5 +167,38 @@ return  rootview;
 
     public ArrayList<Items> getList() {
         return mList;
+    }
+
+
+    private void getSignupTable() {
+
+        class getSignupTable extends AsyncTask<Void, Void, Void> {
+
+
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                SignupTable signupTable = new SignupTable();
+
+
+                List<SignupTable> signupTables =  DatabaseClient.getInstance(getContext()).getAppDatabase().signupDao().getDetails();
+                int b =  signupTables.get(0).getDBscore();
+
+
+
+                mList.get(0).setScores( Integer.toString(b));
+                mList.get(0).setScores( Integer.toString(b));
+
+
+
+
+                return null;
+            }
+
+
+        }
+
+        getSignupTable st = new getSignupTable();
+        st.execute();
     }
 }

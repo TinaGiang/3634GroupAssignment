@@ -8,8 +8,12 @@ import androidx.room.PrimaryKey;
 @Entity
 public class SignupTable {
 
-    @PrimaryKey
-    @NonNull public String semail;
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    public int id;
+
+    @ColumnInfo(name = "email")
+    public String semail;
 
     @ColumnInfo(name = "first_name")
     public String sfirstname;
@@ -19,6 +23,11 @@ public class SignupTable {
 
     @ColumnInfo(name = "password")
     public String spassword;
+
+    @ColumnInfo(name = "dbscore")
+    public int dbscore;
+
+
 
     public static int size() {
         return SignupTable.size();
@@ -54,6 +63,22 @@ public class SignupTable {
 
     public void setPassword(String spassword) {
         this.spassword = spassword;
+    }
+
+    public int getDBscore() {
+        return dbscore;
+    }
+
+    public void setDBscore(int dbscore) {
+        this.dbscore = dbscore;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 

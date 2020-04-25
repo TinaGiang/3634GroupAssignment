@@ -8,6 +8,6 @@ import retrofit2.http.Query;
 
 public interface HolderApi {
 
-    @GET("api.php?amount=1&type=boolean")
+    @GET("api.php?amount=1&category=18&type=boolean")
     Call<Quiz> getPosts();
 }

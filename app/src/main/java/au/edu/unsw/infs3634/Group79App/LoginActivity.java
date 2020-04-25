@@ -92,16 +92,11 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
                         new LeaderboardFragment()).commit();
 
                 break;
-            /*case R.id.profileInfo:
-                //      getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                //              new ()).commit();
-
-                break;*/
-            case R.id.learningList:
+            /*case R.id.learningList:
                 //       getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 //              new ()).commit();
 
-                break;
+                break;*/
             case R.id.takeQuiz:
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                             new TakeQuizFragment()).commit();

@@ -1,6 +1,7 @@
 package au.edu.unsw.infs3634.Group79App;
 
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,14 +14,27 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.util.List;
+
+import au.edu.unsw.infs3634.Group79App.Room.SignupTable;
+
 public class AwardsFragment extends Fragment {
     private int progressStatus = 0;
+    LeaderboardFragment abc = new LeaderboardFragment();
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        getSignupTable();
+
         View rootview =  inflater.inflate(R.layout.awards, container, false);
 
-        LeaderboardFragment abc = new LeaderboardFragment();
+
+
+
+
 
 
         ProgressBar progressBar = (ProgressBar)rootview.findViewById(R.id.progressBar);
@@ -30,6 +44,7 @@ public class AwardsFragment extends Fragment {
         ImageView goldAward = (ImageView)rootview.findViewById(R.id.Gold);
         ImageView platiniumAward = (ImageView)rootview.findViewById(R.id.Platinium);
 
+        System.out.println(abc.getList().get(0).getScoresInt());
         TextView Total = (TextView)rootview.findViewById(R.id.Total);
         Total.setText(abc.getList().get(0).getScoresInt()+"/10000");
         TextView rocketAwardTitle = (TextView)rootview.findViewById(R.id.RocketTitle);
@@ -73,9 +88,43 @@ public class AwardsFragment extends Fragment {
 
 
 
-
-
         return rootview;
 
+    }
+
+
+
+
+    private void getSignupTable() {
+
+        class getSignupTable extends AsyncTask<Void, Void, Void> {
+
+
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+
+                //   SignupTable signupTable = new SignupTable();
+
+
+                List<SignupTable> signupTables =  DatabaseClient.getInstance(getContext()).getAppDatabase().signupDao().getDetails();
+                int a =  signupTables.get(0).getDBscore();
+
+
+
+                System.out.println(a);
+                //    LeaderboardFragment abc = new LeaderboardFragment();
+                abc.getList().get(0).setScores( Integer.toString(a));
+
+                System.out.println(abc.getList().get(0).getScoresInt());
+
+                return null;
+            }
+
+
+        }
+
+        getSignupTable st = new getSignupTable();
+        st.execute();
     }
 }

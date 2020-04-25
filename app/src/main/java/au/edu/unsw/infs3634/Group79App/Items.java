@@ -65,6 +65,7 @@ class Items {
 
 
 
+
     public String getRank() {
         return rank;
     }

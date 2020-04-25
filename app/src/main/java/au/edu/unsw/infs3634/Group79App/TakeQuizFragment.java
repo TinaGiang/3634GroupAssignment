@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 
@@ -15,7 +17,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.List;
+
+import au.edu.unsw.infs3634.Group79App.Room.SignupTable;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,7 +35,9 @@ public class TakeQuizFragment extends Fragment {
     private String falseAnswer;
     private String trueAnswer;
 
-    int a = 0;
+    int a ;
+    int c;
+
 
 
     @Override
@@ -74,8 +82,8 @@ public class TakeQuizFragment extends Fragment {
                 String question = "Question: " + posts.getResults().get(0).getQuestion() + "\n";
 
 
-
-                question = question.replace("&quot;", "").replace("039#;","") + "\n";
+                question = question.replace("&quot;", "") + "\n";
+                question = question.replace("&039#;","1") + "\n";
                 // content += "Correct Answers: " + posts.getResults().get(0).getCorrectAnswer() + "\n";
                 //  content += "Incorrect Answers1: " + posts.getResults().get(0).getIncorrectAnswers().get(0) + "\n";
                 textViewResult.append(question);
@@ -141,15 +149,15 @@ public class TakeQuizFragment extends Fragment {
                         String question = "Question: " + posts.getResults().get(0).getQuestion() + "\n";
 
 
-
-                        question = question.replace("&quot;", "").replace("039#;","") + "\n";
+                        question = question.replace("&quot;", "") + "\n";
+                        question = question.replace("&039#;","1") + "\n";
                         //         content += "Correct Answers: " + posts.getResults().get(0).getCorrectAnswer() + "\n";
                         //     content += "Incorrect Answers1: " + posts.getResults().get(0).getIncorrectAnswers().get(0) + "\n";
                         textViewResult.append(question);
 
                         trueAnswer = posts.getResults().get(0).getCorrectAnswer();
                         falseAnswer = posts.getResults().get(0).getIncorrectAnswers().get(0);
-
+                        saveSignupTable();
 
                     }
 
@@ -210,7 +218,8 @@ public class TakeQuizFragment extends Fragment {
 
 
 
-                        question = question.replace("&quot;", "TEST").replace("&039#;","") + "\n";
+                        question = question.replace("&quot;", "") + "\n";
+                        question = question.replace("&039#;","1") + "\n";
                         //      content += "Correct Answers: " + posts.getResults().get(0).getCorrectAnswer() + "\n";
                         //       content += "Incorrect Answers1: " + posts.getResults().get(0).getIncorrectAnswers().get(0) + "\n";
                         textViewResult.append(question);
@@ -218,8 +227,9 @@ public class TakeQuizFragment extends Fragment {
                         trueAnswer = posts.getResults().get(0).getCorrectAnswer();
                         falseAnswer = posts.getResults().get(0).getIncorrectAnswers().get(0);
 
-
+                        saveSignupTable();
                     }
+
 
 
                     @Override
@@ -232,9 +242,46 @@ public class TakeQuizFragment extends Fragment {
 
         });
 
+
 //next question request
         return rootview;
     }
+
+
+
+
+    private void saveSignupTable() {
+
+        class SaveSignupTable extends AsyncTask<Void, Void, Void> {
+
+
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                //      SignupTable signupTable1 = new SignupTable();
+                //    DatabaseClient.getInstance(getContext()).getAppDatabase().clearAllTables();
+
+                SignupTable signupTable = new SignupTable();
+                List<SignupTable> signupTables =  DatabaseClient.getInstance(getContext()).getAppDatabase().signupDao().getDetails();
+//               int b =  signupTables.get(0).getDBscore();
+
+                //    a =b;
+                System.out.println(a);
+
+                signupTable.setDBscore(a);
+
+                DatabaseClient.getInstance(getContext()).getAppDatabase().signupDao().insertDetails(signupTable);
+                return null;
+            }
+
+
+        }
+
+        SaveSignupTable st = new SaveSignupTable();
+        st.execute();
+    }
+
+
 
 }
 

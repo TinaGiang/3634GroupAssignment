@@ -34,8 +34,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.mViewHolder> {
             mTextView1 = itemView.findViewById(R.id.textView1);
             mTextView2 = itemView.findViewById(R.id.textView2);
             mTextView3 = itemView.findViewById(R.id.textView3);
-            mTextView1.setTextColor(Color.parseColor("#8a2be2"));
-            mTextView2.setTextColor(Color.parseColor("#8a2be2"));
+            mTextView1.setTextColor(Color.parseColor("#0277BD"));
+            mTextView2.setTextColor(Color.parseColor("#0277BD"));
             mTextView3.setTextColor(Color.parseColor("BLACK"));
 
             CVid = itemView.findViewById(R.id.CV);

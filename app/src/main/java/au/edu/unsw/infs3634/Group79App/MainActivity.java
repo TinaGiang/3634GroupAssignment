@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (password.isEmpty()) {
-                    mpassword.setError("Password required");
+                    mpassword.setError("Type in 'password'");
                     mpassword.requestFocus();
                     return;
                 }

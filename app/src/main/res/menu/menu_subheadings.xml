@@ -21,10 +21,10 @@
         android:id="@+id/myAwards"
         android:icon="@drawable/awards"
         android:title="My Awards" />
-         <item
+         <!--<item
         android:id="@+id/learningList"
         android:icon="@drawable/list"
-        android:title="Learning List" />
+        android:title="Learning List" />-->
 
     </group>
 

@@ -11,14 +11,18 @@
         android:id="@+id/memail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="45dp"
         android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginEnd="20dp"
-        android:orientation="vertical"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="30dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/mpassword" />
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/mpassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/mpassword"
@@ -27,11 +31,11 @@
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="60dp"
-        android:orientation="vertical"
+        android:layout_marginBottom="50dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -42,9 +46,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="75dp"
+        android:background="@drawable/roundbtn"
         android:orientation="vertical"
         android:text="login"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +65,7 @@
         android:layout_marginLeft="147dp"
         android:layout_marginEnd="148dp"
         android:layout_marginRight="148dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="50dp"
         android:text="Register now"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,9 +82,31 @@
         android:layout_marginBottom="7dp"
         android:gravity="center"
         android:text="Don't have an account yet?"
+        android:textColor="#000000"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/registerButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="246dp"
+        android:layout_height="136dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GoCom"
+        android:textColor="#000000"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView4"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

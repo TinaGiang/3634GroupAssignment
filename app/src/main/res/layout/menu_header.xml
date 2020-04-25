@@ -7,7 +7,7 @@
     android:gravity="bottom"
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
-    android:background="#61C2DA">
+    android:background="#03A9F4">
 
     <ImageView
         android:layout_width="80dp"
@@ -20,14 +20,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="first name last name"
+        android:text="User"
         app:layout_constraintStart_toStartOf="parent"
         android:textColor="#000000" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="email@gmail.com.au"
+        android:text="user@gmail.com.au"
         app:layout_constraintStart_toStartOf="parent"
         android:textColor="#000000"/>
 

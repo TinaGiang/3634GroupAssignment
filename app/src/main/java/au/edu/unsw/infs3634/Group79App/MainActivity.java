@@ -50,10 +50,13 @@ public class MainActivity extends AppCompatActivity {
     EditText memail;
     EditText mpassword;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         memail = findViewById(R.id.memail);
         mpassword = findViewById(R.id.mpassword);

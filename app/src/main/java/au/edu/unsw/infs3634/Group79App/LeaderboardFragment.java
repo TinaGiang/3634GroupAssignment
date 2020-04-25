@@ -19,6 +19,7 @@ import java.util.Comparator;
 public class LeaderboardFragment extends Fragment {
    private ArrayList<Items> mList;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -42,6 +43,7 @@ return  rootview;
     }
 
     public LeaderboardFragment() {
+
         mList = new ArrayList<>();
         mList.add(new Items(R.drawable.silver, "You", "0", " ", 1));
         mList.add(new Items(R.drawable.bronze, "Kermit", "1040", "",10));
@@ -51,9 +53,9 @@ return  rootview;
         mList.add(new Items(R.drawable.silver, "Nani", "3030", "",6));
         mList.add(new Items(R.drawable.silver, "Boris", "4120", "",5));
         mList.add(new Items(R.drawable.gold, "Goku", "5470", "",4));
-
         mList.add(new Items(R.drawable.gold, "Lelouch", "6020", "",3));
         mList.add(new Items(R.drawable.plat, "My Cat", "8020", "",2));
+
 
         for (int i = 0; i < mList.size(); i++) {
             int num = (mList.get(i).getScoresInt());

@@ -75,6 +75,9 @@ public class LeaderboardFragment extends Fragment {
             @Override
             protected Void doInBackground(Void... voids) {
                 SignupTable signupTable = new SignupTable();
+
+                // add entry into db
+
                 List<SignupTable> signupTables = DatabaseClient.getInstance(getContext()).getAppDatabase().signupDao().getDetails();
                 int b = signupTables.get(0).getDBscore();
                 mList.get(0).setScores(Integer.toString(b));

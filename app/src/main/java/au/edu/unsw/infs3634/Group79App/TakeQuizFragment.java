@@ -182,7 +182,11 @@ public class TakeQuizFragment extends Fragment {
             @Override
             protected Void doInBackground(Void... voids) {
                 SignupTable signupTable = new SignupTable();
-                int points = 10;
+
+                signupTable.setDBscore(10);
+                DatabaseClient.getInstance(getContext()).getAppDatabase().signupDao().insertDetails(signupTable);
+
+                  int points = 10;
 
                 // query database for details
                 List<SignupTable> signupTables = DatabaseClient.getInstance(getContext()).getAppDatabase().signupDao().getDetails();

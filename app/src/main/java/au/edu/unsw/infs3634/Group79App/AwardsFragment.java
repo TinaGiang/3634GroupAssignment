@@ -88,6 +88,7 @@ public class AwardsFragment extends Fragment {
         class getSignupTable extends AsyncTask<Void, Void, Void> {
             @Override
             protected Void doInBackground(Void... voids) {
+                SignupTable signupTable = new SignupTable();
 
                 List<SignupTable> signupTables = DatabaseClient.getInstance(getContext()).getAppDatabase().signupDao().getDetails();
                 int a = signupTables.get(0).getDBscore();

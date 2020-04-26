@@ -134,6 +134,11 @@ public class MainActivity extends AppCompatActivity {
                         .signupDao()
                         .getDetails();
 
+                SignupTable signupTable = new SignupTable();
+                signupTable.setFirstName("Test");
+                DatabaseClient.getInstance(getApplicationContext()).getAppDatabase().signupDao().insertDetails(signupTable);
+
+
                 return tableList;
 
             }

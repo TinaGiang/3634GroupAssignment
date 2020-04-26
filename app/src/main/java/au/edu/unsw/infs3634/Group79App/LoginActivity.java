@@ -39,10 +39,6 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_screen);
 
-
-
-
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -61,10 +57,10 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
 
         if (savedInstanceState == null) {
 
-      //      getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-         //           new LeaderboardFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new TakeQuizFragment()).commit();
 
-           // nv.setCheckedItem(R.id.nav);
+           nv.setCheckedItem(R.id.navView);
         }
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -92,11 +88,7 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
                         new LeaderboardFragment()).commit();
 
                 break;
-            /*case R.id.learningList:
-                //       getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                //              new ()).commit();
 
-                break;*/
             case R.id.takeQuiz:
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                             new TakeQuizFragment()).commit();

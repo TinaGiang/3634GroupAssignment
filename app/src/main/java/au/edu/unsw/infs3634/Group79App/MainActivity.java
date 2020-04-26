@@ -56,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         memail = findViewById(R.id.memail);
         mpassword = findViewById(R.id.mpassword);
 

@@ -2,6 +2,7 @@ package au.edu.unsw.infs3634.Group79App;
 
 class Items {
 
+    //create list of items in the leaderboard arraylist
     private int level;
     private String name;
     private String scores;
@@ -10,6 +11,7 @@ class Items {
     private String rank;
     private int sort;
 
+    //arraylist of objects
     public Items(int image, String text1, String text2, String text3, int text4) {
         level = image;
         name = text1;
@@ -18,11 +20,12 @@ class Items {
         sort = text4;
     }
 
+    //getters/setters to access data
     public int getmImage() {
         return level;
     }
 
-    public void setDrawableId (int level) {
+    public void setDrawableId(int level) {
         this.level = level;
     }
 
@@ -35,9 +38,6 @@ class Items {
     }
 
     public String getScores() {
-
-
-
         return scores;
     }
 
@@ -47,24 +47,14 @@ class Items {
         return ScoreInt;
     }
 
-
-
     public int getSort() {
-
-
         return sort;
     }
 
 
     public void setScores(String scores) {
-
-
-
         this.scores = scores;
     }
-
-
-
 
     public String getRank() {
         return rank;
@@ -73,7 +63,6 @@ class Items {
     public void setRank(String name) {
         this.rank = name;
     }
-
 
 
 }

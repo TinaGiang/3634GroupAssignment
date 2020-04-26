@@ -11,19 +11,13 @@ import java.util.List;
 @Dao
 public interface SignupDao {
 
+    // queries to interact with the database
+
     @Insert
     void insertDetails(SignupTable data);
 
     @Query("SELECT * FROM SignupTable ORDER BY dbscore DESC")
     List<SignupTable> getDetails();
-
-
-
-
-//    @Query("UPDATE SignupTable SET dbscore = 0")
-    //   void updatescore (SignupTable dbscore);
-
-
 
     @Delete
     void deleteAllData(SignupTable data);

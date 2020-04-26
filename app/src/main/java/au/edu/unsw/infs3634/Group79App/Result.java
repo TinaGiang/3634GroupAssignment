@@ -31,10 +31,7 @@ public class Result implements Serializable
     private List<String> incorrectAnswers = new ArrayList<String>();
     private final static long serialVersionUID = -634622640366817689L;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
+    //methods to access arraylist of response from api call
     public Result() {
     }
 

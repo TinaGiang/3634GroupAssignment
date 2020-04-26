@@ -27,16 +27,27 @@ import au.edu.unsw.infs3634.Group79App.Room.SignupTable;
  *
  *   Title: Android Room Database Example – Building a Todo App
  *   Author: Belal Khan
- *   Date: ACCESSED 04-04-2020
+ *   Date: ACCESSED 09-04-2020
  *   Code version: July 27, 2018
  *   Availability: https://www.simplifiedcoding.net/android-room-database-example/#Database-Client
  *
  *   Title: Simple RecyclerView (Java)
  *   Author: codinginflow
- *   Date: ACCESSED 04-04-2020
+ *   Date: ACCESSED 10-04-2020
  *   Code version: Oct 19, 2017
  *   Availability: https://codinginflow.com/tutorials/android/simple-recyclerview-java/part-1-layouts-model-class
  *
+ *   Title: Simple GET Request
+ *   Author: codinginflow
+ *   Date: ACCESSED 06-04-2020
+ *   Code version: Sep 18, 2018
+ *   Availability: https://codinginflow.com/tutorials/android/retrofit/part-1-simple-get-request
+ *
+ *  Title: Navigation Drawer with Fragments
+ *  Author: codinginflow
+ *  Date: ACCESSED 07-04-2020
+ *  Code version: Mar 15, 2018
+ *  Availability: https://codinginflow.com/tutorials/android/navigation-drawer/part-1-menu-activity-theme
  *
  ***************************************************************************************/
 
@@ -130,9 +141,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(List<SignupTable> tasks) {
                 super.onPostExecute(tasks);
-                //TasksAdapter adapter = new TasksAdapter(MainActivity.this, tasks);
-                //recyclerView.setAdapter(adapter);
-            }
+               }
         }
 
         GetDetails gd = new GetDetails();

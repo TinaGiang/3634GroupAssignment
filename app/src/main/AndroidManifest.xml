@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="au.edu.unsw.infs3634.Group79App">
 
+
     <uses-permission android:name="android.permission.INTERNET" />
 
 
@@ -24,10 +25,5 @@
         <activity android:name="au.edu.unsw.infs3634.Group79App.SignupActivity" />
         <activity android:name="au.edu.unsw.infs3634.Group79App.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name="au.edu.unsw.infs3634.Group79App.Leaderboard" />
-        <activity android:name="au.edu.unsw.infs3634.Group79App.TakeQuiz" />
-        <activity android:name="au.edu.unsw.infs3634.Group79App.Awards" />
-
     </application>
-
 </manifest>

@@ -6,6 +6,7 @@ import androidx.room.RoomDatabase;
 @Database(entities = {SignupTable.class}, version = 2)
 public abstract class SignupDatabase extends RoomDatabase {
 
+    //create database
     public abstract SignupDao signupDao();
 
 }

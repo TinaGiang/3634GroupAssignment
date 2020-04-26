@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Awards" >
+    >
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -15,20 +15,25 @@
         android:layout_below="@+id/imageView2"
         android:layout_alignParentLeft="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="105dp"
-        android:layout_marginTop="6dp"
         android:indeterminate="false"
         android:max="10000"
         android:minWidth="200dp"
-         android:minHeight="50dp"
-        android:progress="1" />
+        android:minHeight="50dp"
+        android:progress="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/progressBar"
         android:layout_alignLeft="@+id/progressBar"
-        android:layout_below="@+id/progressBar"/>
+        android:layout_marginTop="116dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -36,7 +41,10 @@
         android:layout_height="100dp"
         android:layout_below="@+id/MyAwards"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MyAwards"
         app:srcCompat="@drawable/gobletofif" />
 
     <TextView
@@ -45,11 +53,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="16dp"
         android:text="@string/my_awards"
         android:textColor="#0277BD"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/Rocket"
@@ -58,9 +69,11 @@
         android:layout_below="@+id/progressBar"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
         app:srcCompat="@drawable/greyrocket" />
 
     <ImageView
@@ -70,9 +83,11 @@
         android:layout_below="@+id/Rocket"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Rocket"
         app:srcCompat="@drawable/greyaward" />
 
     <ImageView
@@ -82,9 +97,11 @@
         android:layout_below="@+id/Bronze"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Bronze"
         app:srcCompat="@drawable/greyaward" />
 
     <ImageView
@@ -94,9 +111,11 @@
         android:layout_below="@+id/Silver"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Silver"
         app:srcCompat="@drawable/greyaward" />
 
     <ImageView
@@ -106,9 +125,11 @@
         android:layout_below="@+id/Gold"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Gold"
         app:srcCompat="@drawable/question" />
 
     <TextView
@@ -116,135 +137,155 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/progressBar"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:layout_toEndOf="@+id/Rocket"
         android:layout_toRightOf="@+id/Rocket"
         android:text="We Have Lift Off!!"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Rocket"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
     <TextView
         android:id="@+id/BronzeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/RocketTitle"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="38dp"
         android:layout_toEndOf="@+id/Rocket"
         android:layout_toRightOf="@+id/Rocket"
         android:text="Your First Medal!"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Bronze"
+        app:layout_constraintTop_toBottomOf="@+id/RocketTitle" />
 
     <TextView
         android:id="@+id/SilverTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/BronzeTitle"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="38dp"
         android:layout_toEndOf="@+id/Rocket"
         android:layout_toRightOf="@+id/Rocket"
         android:text="Oooh Shiny!"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Silver"
+        app:layout_constraintTop_toBottomOf="@+id/BronzeTitle" />
 
     <TextView
         android:id="@+id/PlatTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/GoldTitle"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
         android:layout_toEndOf="@+id/Rocket"
         android:layout_toRightOf="@+id/Rocket"
         android:text="You are a Star!"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Platinium"
+        app:layout_constraintTop_toBottomOf="@+id/GoldTitle" />
 
     <TextView
         android:id="@+id/GoldTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/SilverTitle"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
         android:layout_toEndOf="@+id/Rocket"
         android:layout_toRightOf="@+id/Rocket"
         android:text="Struck Gold!"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/Gold"
+        app:layout_constraintTop_toBottomOf="@+id/SilverTitle" />
 
     <TextView
         android:id="@+id/RocketDes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/RocketTitle"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
         android:layout_toEndOf="@+id/Rocket"
         android:layout_toRightOf="@+id/Rocket"
         android:text="Score greater than 0"
-        android:textStyle="italic" />
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/Rocket"
+        app:layout_constraintTop_toBottomOf="@+id/RocketTitle" />
 
     <TextView
         android:id="@+id/BronzeDes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/BronzeTitle"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
         android:layout_toEndOf="@+id/Bronze"
         android:layout_toRightOf="@+id/Bronze"
-        android:text="Score greater than 1"
-        android:textStyle="italic" />
+        android:text="Score greater than 100"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/Bronze"
+        app:layout_constraintTop_toBottomOf="@+id/BronzeTitle" />
 
     <TextView
         android:id="@+id/SilverDes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/SilverTitle"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/Silver"
         android:layout_toRightOf="@+id/Silver"
         android:text="Score greater than 2500"
-        android:textStyle="italic" />
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/Silver"
+        app:layout_constraintTop_toBottomOf="@+id/SilverTitle" />
 
     <TextView
         android:id="@+id/GoldDes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/GoldTitle"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
         android:layout_toEndOf="@+id/Gold"
         android:layout_toRightOf="@+id/Gold"
         android:text="Score greater than 5000"
-        android:textStyle="italic" />
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/Gold"
+        app:layout_constraintTop_toBottomOf="@+id/GoldTitle" />
 
     <TextView
         android:id="@+id/PlatDes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/PlatTitle"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
         android:layout_toEndOf="@+id/Platinium"
         android:layout_toRightOf="@+id/Platinium"
         android:text="Score greater than 8000"
-        android:textStyle="italic" />
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@+id/Platinium"
+        app:layout_constraintTop_toBottomOf="@+id/PlatTitle" />
 
     <TextView
         android:id="@+id/Total"
@@ -252,7 +293,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/progressBar"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-12dp"
-        android:text="TextView" />
+        android:layout_marginTop="36dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/progressBar" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

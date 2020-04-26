@@ -20,10 +20,8 @@ public class Quiz implements Serializable
     private List<Result> results = new ArrayList<Result>();
     private final static long serialVersionUID = 6449494497006561444L;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
+//methods to access api
+
     public Quiz() {
     }
 

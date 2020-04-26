@@ -23,9 +23,8 @@ import android.widget.Button;
 
 import com.google.android.material.navigation.NavigationView;
 
-// Code below referenced from Medium - Android:Navigation Drawer
-// Availability: https://medium.com/quick-code/android-navigation-drawer-e80f7fc2594f
-//https://www.youtube.com/watch?v=zYVEMCiDcmY
+
+
 
 public class LoginActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -42,6 +41,7 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //set nav button
         drawerLayout = findViewById(R.id.menu);
         NavigationView nv = findViewById(R.id.navView);
         nv.setNavigationItemSelectedListener(this);
@@ -55,6 +55,7 @@ public class LoginActivity extends AppCompatActivity implements NavigationView.O
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_name);
 
+        //default page if no previous saved actviity
         if (savedInstanceState == null) {
 
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

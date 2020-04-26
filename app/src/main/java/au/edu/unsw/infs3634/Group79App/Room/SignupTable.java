@@ -8,6 +8,9 @@ import androidx.room.PrimaryKey;
 @Entity
 public class SignupTable {
 
+//data types to be stored in database with getters/setters to access data
+
+    //autoincrement primary key
     @PrimaryKey(autoGenerate = true)
     @NonNull
     public int id;
@@ -26,7 +29,6 @@ public class SignupTable {
 
     @ColumnInfo(name = "dbscore")
     public int dbscore;
-
 
 
     public static int size() {
@@ -80,7 +82,6 @@ public class SignupTable {
     public void setId(int id) {
         this.id = id;
     }
-
 
 
 }
